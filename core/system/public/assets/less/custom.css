@@ -1,3 +1,6 @@
+.footer {
+  border-top: 1px solid red;
+}
 body.login {
   background-image: none;
 }

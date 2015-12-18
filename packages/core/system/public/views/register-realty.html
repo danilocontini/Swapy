@@ -1,0 +1,51 @@
+<form>
+    <div class="row form-group">
+        <div class="col-md-6">
+            <h3>Dados do Proprietário</h3>
+            <label for="name">Nome:</label>
+            <input type="text" class="form-control input-lg" id="name" placeholder="Nome">
+            <label for="phone1">Telefone:</label>
+            <input type="text" class="form-control input-lg" id="phone" placeholder="Telefone">
+        </div>
+    </div>
+    <hr>
+    <div class="row form-group">
+        <div class="col-md-6">
+            <h3>Dados do Imóvel</h3>
+            <label for="value">Valor:</label>
+            <input type="range" min="10" max="1000" class="input-lg" id="value" placeholder="Nome">
+            <label for="type">Tipo:</label>
+            <select id="type" class="form-control input-lg">
+                <option>Casa</option>
+                <option>Apartamento</option>
+                <option>Terreno</option>
+            </select>
+            <div>
+                <label>Condomínio:</label>
+            </div>
+            <label class="radio-inline">
+                <input type="radio" name="condominium" id="sim" value="sim"> Sim
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="condominium" id="sim" value="nao"> Não
+            </label>
+            <div>
+                <label for="location">Localização:</label>
+                
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Imóvel Desejado</h3>
+            <label for="w_value">Valor:</label>
+            <input type="range" min="10" max="1000" class="input-lg" id="w_value" placeholder="Nome">
+            <label for="w_type">Tipo:</label>
+            <select id="w_type" class="form-control input-lg">
+                <option>Casa</option>
+                <option>Apartamento</option>
+                <option>Terreno</option>
+            </select>
+            <label for="w_condominium">Condomínio:</label>
+            <label for="w_location">Localização:</label>
+        </div>
+    </div>
+</form>
