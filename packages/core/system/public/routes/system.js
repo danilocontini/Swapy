@@ -63,6 +63,11 @@ angular.module('mean.system').config(['$meanStateProvider', '$urlRouterProvider'
                 url: '/register-realty',
                 templateUrl: 'system/views/register-realty.html'
             });
+        $meanStateProvider
+            .state('show-connections', {
+                url: '/show-connections',
+                templateUrl: 'system/views/show-connections.html'
+            });
   }
 ]).config(['$locationProvider',
   function ($locationProvider) {
