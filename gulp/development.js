@@ -44,17 +44,6 @@ gulp.task('less', function () {
             return vinylFile.cwd;
         }));
 });
-gulp.task('build-less', function () {
-    return gulp.src(paths.less)
-        .pipe(plugins.less())
-        .pipe(gulp.dest(function (vinylFile) {
-            return vinylFile.cwd;
-    }));
-});
-
-
-
-
 
 gulp.task('devServe', ['env:development'], function () {
 
