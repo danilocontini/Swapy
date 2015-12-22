@@ -20,7 +20,7 @@ SystemPackage.register(function (app, auth, database, circles) {
     SystemPackage.routes(app, auth, database);
 
     SystemPackage.aggregateAsset('css', 'common.css');
-    SystemPackage.angularDependencies(['mean-factory-interceptor']);
+    SystemPackage.angularDependencies(['ui.router', 'mean-factory-interceptor']);
     
     SystemPackage.aggregateAsset('js', 'd3.v3.min.js')
     SystemPackage.aggregateAsset('css', '../less/custom.less');
