@@ -37,26 +37,11 @@ gulp.task('csslint', function () {
         .pipe(count('csslint', 'files lint free'));
 });
 
-<<<<<<< HEAD
-<< << << < HEAD
-gulp.task('less', function () {
-            return gulp.src(paths.less)
-                .pipe(plugins.less())
-                .pipe(gulp.dest(function (vinylFile) {
-                    return vinylFile.cwd;
-                })); === === =
-            gulp.task('less', function () {
-                return gulp.src(paths.less)
-                    .pipe(plugins.less())
-                    .pipe(gulp.dest('./packages')); >>> >>> > linnovate / master
-            });
-=======
 gulp.task('less', function() {
   return gulp.src(paths.less)
     .pipe(plugins.less())
     .pipe(gulp.dest('./packages'));
 });
->>>>>>> linnovate/master
 
             gulp.task('devServe', ['env:development'], function () {
 
