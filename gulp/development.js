@@ -1,19 +1,19 @@
 'use strict';
 
 var gulp = require('gulp'),
-    gulpLoadPlugins = require('gulp-load-plugins'),
-    through = require('through'),
-    gutil = require('gulp-util'),
-    plugins = gulpLoadPlugins(),
-    coffee = require('gulp-coffee'),
-    paths = {
-        js: ['./*.js', 'config/**/*.js', 'gulp/**/*.js', 'tools/**/*.js', 'packages/**/*.js', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**', '!packages/**/assets/**/js/**'],
-        html: ['packages/**/*.html', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**'],
-        css: ['packages/**/*.css', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**', '!packages/core/**/public/assets/css/*.css'],
-        less: ['packages/**/*.less', '!packages/**/_*.less', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**'],
-        sass: ['packages/**/*.scss', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**'],
-        coffee: ['packages/**/*.coffee', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**']
-    };
+  gulpLoadPlugins = require('gulp-load-plugins'),
+  through = require('through'),
+  gutil = require('gulp-util'),
+  plugins = gulpLoadPlugins(),
+  coffee = require('gulp-coffee'),
+  paths = {
+    js: ['./*.js', 'config/**/*.js', 'gulp/**/*.js', 'tools/**/*.js', 'packages/**/*.js', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**', '!packages/**/assets/**/js/**'],
+    html: ['packages/**/*.html', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**'],
+    css: ['packages/**/*.css', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**','!packages/core/**/public/assets/css/*.css'],
+    less: ['packages/**/*.less', '!packages/**/_*.less', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**'],
+    sass: ['packages/**/*.scss', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**'],
+    coffee: ['packages/**/*.coffee', '!packages/**/node_modules/**', '!packages/**/assets/**/lib/**']
+  };
 
 /*var defaultTasks = ['clean', 'jshint', 'less', 'csslint', 'devServe', 'watch'];*/
 var defaultTasks = ['coffee', 'clean', 'less', 'csslint', 'devServe', 'watch'];
@@ -37,6 +37,7 @@ gulp.task('csslint', function () {
         .pipe(count('csslint', 'files lint free'));
 });
 
+<<<<<<< HEAD
 << << << < HEAD
 gulp.task('less', function () {
             return gulp.src(paths.less)
@@ -49,6 +50,13 @@ gulp.task('less', function () {
                     .pipe(plugins.less())
                     .pipe(gulp.dest('./packages')); >>> >>> > linnovate / master
             });
+=======
+gulp.task('less', function() {
+  return gulp.src(paths.less)
+    .pipe(plugins.less())
+    .pipe(gulp.dest('./packages'));
+});
+>>>>>>> linnovate/master
 
             gulp.task('devServe', ['env:development'], function () {
 
