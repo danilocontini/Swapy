@@ -1,12 +1,6 @@
 <script>
-    var w = 900,
-        h = 400;
 
-    var circleWidth = 5;
-
-    var fontFamily = 'Arial',
-        fontSizeHighlight = '1.5em',
-        fontSizeNormal = '1em';
+    var circleWidth = 25;
 
     var palette = {
         "lightgray": "#819090",
@@ -57,15 +51,15 @@
     var vis = d3.select("#connections")
         .append("svg:svg")
         .attr("class", "stage")
-        .attr("width", w)
-        .attr("height", h);
+        .attr("width", 800)
+        .attr("height", 300)
 
     var force = d3.layout.force()
         .nodes(nodes)
         .links([])
         .gravity(0.1)
-        .charge(-700)
-        .size([w, h]);
+        .charge(-1000)
+        .size([document.getElementById("connections").offsetWidth, document.getElementById("connections").offsetHeight]);
 
     var link = vis.selectAll(".link")
         .data(links)
@@ -85,33 +79,27 @@
             //CIRCLE
             d3.select(this).selectAll("circle")
                 .transition()
-                .duration(100)
-                .style("cursor", "none")
+                .duration(250)
                 .style("stroke", "none")
                 .attr("r", circleWidth + 3)
-                .attr("fill", palette.darkgray);
 
             //TEXT
             d3.select(this).select("text")
                 .transition()
-                .style("cursor", "none")
                 .duration(250)
-                .style("cursor", "none")
+                .style("opacity", 1)
                 .style("stroke", "none")
-                .attr("font-size", "1.5em")
-                .attr("x", 15)
+                .attr("x", 25)
                 .attr("y", 5)
         } else {
             //CIRCLE
             d3.select(this).selectAll("circle")
-                .style("cursor", "none")
                 .style("stroke", "none")
 
             //TEXT
             d3.select(this).select("text")
-                .style("cursor", "none")
                 .style("stroke","none")
-                .attr("font-size", "1.5em")
+                .style("opacity", 1)
         }
     })
 
@@ -123,19 +111,22 @@
                 .transition()
                 .duration(250)
                 .attr("r", circleWidth)
-                .attr("fill", palette.darkgray);
 
             //TEXT
             d3.select(this).select("text")
                 .transition()
                 .duration(250)
-                .attr("font-size", "1em")
-                .attr("x", 8)
-                .attr("y", 4)
-        }
-    })
 
-    .call(force.drag);
+        } else {
+            //TEXT
+            d3.select(this).selectAll("text")
+                .transition()
+                .duration(250)
+                .style("opacity", 0)
+        }
+    });
+
+    //.call(force.drag);
 
 
     //CIRCLE
@@ -149,9 +140,9 @@
         .attr("r", circleWidth)
         .attr("fill", function (d, i) {
             if (i > 0) {
-                return palette.darkgray;
+                return "red";
             } else {
-                return palette.darkgray
+                return "green"
             }
         })
 
@@ -160,11 +151,12 @@
         .text(function (d, i) {
             return d.name;
         })
+        .style("opacity", 0)
         .attr("x", function (d, i) {
             if (i > 0) {
                 return circleWidth + 5;
             } else {
-                return -10
+                return 10
             }
         })
         .attr("y", function (d, i) {
@@ -174,7 +166,6 @@
                 return 8
             }
         })
-        .attr("font-family", "Helvetica Neue")
         .attr("fill", function (d, i) {
             if (i > 0) {
                 return palette.darkgray;
@@ -220,4 +211,15 @@
 
     force.start();
 </script>
-<div id="connections"></div>
+<div class="container" ng-controller="Connections as connections">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="connections"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>{{connections.ac}}</p>
+        </div>
+    </div>
+</div>

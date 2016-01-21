@@ -1,8 +1,36 @@
 @import "vars.less";
-@primaryColor: red;
 .footer{
-    border-top: 1px solid @primaryColor;
+    border-top: 1px solid #cccccc;
 }
 body.login{
     background-image: none;
+}
+svg.stage {
+    width: 100%;
+    min-height: 300px;
+    overflow: visible;
+}
+.navbar-custom {
+    background-color: @primaryColor;
+	border-color: @primaryColor - 10%;
+    a {
+        color: #FFFFFF;
+    }
+    .navbar-nav > a {
+        color: #FFFFFF;
+        &,
+        &:hover,
+        &:focus {
+            background-color: @primaryColor - 50%;
+        }
+    }
+    // Open dropdowns
+    .open > a {
+        &,
+        &:hover,
+        &:focus {
+            background-color: @primaryColor - 50%;
+            border-color: @primaryColor - 60%;
+        }
+    }
 }

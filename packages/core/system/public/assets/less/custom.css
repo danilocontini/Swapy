@@ -1,0 +1,24 @@
+.footer {
+  border-top: 1px solid #cccccc;
+}
+body.login {
+  background-image: none;
+}
+svg.stage {
+  width: 100%;
+  min-height: 300px;
+  overflow: visible;
+}
+.navbar-custom {
+  background-color: #0096ff;
+  border-color: #008cf5;
+}
+.navbar-custom a {
+  color: #FFFFFF;
+}
+.navbar-custom .navbar-nav a {
+  color: #FFFFFF;
+}
+.navbar-custom .navbar-nav a:hover {
+  background-color: #0064cd;
+}
