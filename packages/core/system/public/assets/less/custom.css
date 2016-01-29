@@ -16,9 +16,17 @@ svg.stage {
 .navbar-custom a {
   color: #FFFFFF;
 }
-.navbar-custom .navbar-nav a {
+.navbar-custom .navbar-nav > a {
   color: #FFFFFF;
 }
-.navbar-custom .navbar-nav a:hover {
+.navbar-custom .navbar-nav > a,
+.navbar-custom .navbar-nav > a:hover,
+.navbar-custom .navbar-nav > a:focus {
   background-color: #0064cd;
+}
+.navbar-custom .open > a,
+.navbar-custom .open > a:hover,
+.navbar-custom .open > a:focus {
+  background-color: #0064cd;
+  border-color: #005ac3;
 }

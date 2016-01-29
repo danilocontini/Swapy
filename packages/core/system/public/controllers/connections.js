@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean.system').controller('Connections', ['$scope', function($scope, $http) {
+angular.module('mean.system').controller('Connections', function($scope, $http) {
     $scope.width = 500;
     $scope.height = 500;
 
@@ -11,7 +11,7 @@ angular.module('mean.system').controller('Connections', ['$scope', function($sco
         .linkDistance(30)
         .size([$scope.width, $scope.height]);
 
-    $http.get('miserables.json').success(function (graph) {
+    $http.get('./miserables.json').success(function (graph) {
         $scope.nodes = graph.nodes;
         $scope.links = graph.links;
 
@@ -31,4 +31,4 @@ angular.module('mean.system').controller('Connections', ['$scope', function($sco
             })
             .start();
     });
-}])
+})
