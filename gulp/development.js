@@ -43,11 +43,6 @@ gulp.task('less', function () {
         //.pipe(console.log(plugins.less()))
         .pipe(gulp.dest('./packages'));
 });
-//gulp.task('build-css', function () {
-//    return gulp.src('packages/core/system/public/assets/less')
-//        .pipe(plugins.less())
-//        .pipe(gulp.dest('./packages/core/system/public/assets/css'));
-//});
 
 gulp.task('devServe', ['env:development'], function () {
 

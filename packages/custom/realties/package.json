@@ -1,0 +1,9 @@
+{
+  "name": "realties",
+  "version": "0.0.1",
+  "description": "Realty module for MEAN applications",
+  "author": {
+    "name": "Danilo",
+    "email": "danilocontini@gmail.com"
+  }
+}
