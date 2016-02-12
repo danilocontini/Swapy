@@ -16,7 +16,11 @@ var gulp = require('gulp'),
     };
 
 /*var defaultTasks = ['clean', 'jshint', 'less', 'csslint', 'devServe', 'watch'];*/
+<<<<<<< HEAD
 var defaultTasks = ['coffee', 'clean', /*'build-css',*/ 'less', 'csslint', 'devServe', 'watch'];
+=======
+var defaultTasks = ['coffee','clean', 'less', 'sass', 'csslint', 'devServe', 'watch'];
+>>>>>>> linnovate/master
 
 gulp.task('env:development', function () {
     process.env.NODE_ENV = 'development';
@@ -42,6 +46,12 @@ gulp.task('less', function () {
         .pipe(plugins.less())
         //.pipe(console.log(plugins.less()))
         .pipe(gulp.dest('./packages'));
+});
+
+gulp.task('sass', function() {
+  return gulp.src(paths.sass)
+    .pipe(plugins.sass().on('error', plugins.sass.logError))
+    .pipe(gulp.dest('./packages'));
 });
 
 gulp.task('devServe', ['env:development'], function () {
@@ -91,10 +101,18 @@ gulp.task('watch', function () {
         interval: 500
     });
 
+<<<<<<< HEAD
     gulp.watch(paths.coffee, ['coffee']);
     gulp.watch(paths.js, ['jshint']);
     gulp.watch(paths.css, ['csslint']).on('change', plugins.livereload.changed);
     gulp.watch(paths.less, ['less']);
+=======
+  gulp.watch(paths.coffee,['coffee']);
+  gulp.watch(paths.js, ['jshint']);
+  gulp.watch(paths.css, ['csslint']).on('change', plugins.livereload.changed);
+  gulp.watch(paths.less, ['less']);
+  gulp.watch(paths.sass, ['sass']);
+>>>>>>> linnovate/master
 });
 
 function count(taskName, message) {

@@ -24,6 +24,7 @@ var hasPermissions = function(req, res, next) {
 
 module.exports = function(Realties, app, auth) {
   
+<<<<<<< HEAD:packages/custom/realties/server/routes/realties.js
   var realties = require('../controllers/realties')(Realties);
 
   app.route('/api/realties')
@@ -36,4 +37,18 @@ module.exports = function(Realties, app, auth) {
 
   // Finish with setting up the realtyId param
   app.param('realtyId', realties.realty);
+=======
+  var articles = require('../controllers/articles')(Articles);
+
+  app.route('/api/articles')
+    .get(articles.all)
+    .post(auth.requiresLogin, hasPermissions, articles.create);
+  app.route('/api/articles/:articleId')
+    .get(auth.isMongoId, articles.show)
+    .put(auth.isMongoId, auth.requiresLogin, hasAuthorization, hasPermissions, articles.update)
+    .delete(auth.isMongoId, auth.requiresLogin, hasAuthorization, hasPermissions, articles.destroy);
+
+  // Finish with setting up the articleId param
+  app.param('articleId', articles.article);
+>>>>>>> linnovate/master:packages/core/articles/server/routes/articles.js
 };
