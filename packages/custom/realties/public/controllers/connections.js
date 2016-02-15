@@ -1,19 +1,17 @@
 'use strict';
 
-var d3 = require('d3');
-
-angular.module('mean.realties').controller('Connections', function($scope, $http) {
-    $scope.width = 500;
+angular.module('mean.realties').controller('Connections', ['$scope', '$http', '$element', function($scope, $http, $element) {
+    $scope.width = document.getElementById("connections").parentElement.offsetWidth;
     $scope.height = 500;
-
+    
     var color = d3.scale.category20()
 
     var force = d3.layout.force()
         .charge(-120)
-        .linkDistance(30)
+        .linkDistance(100)
         .size([$scope.width, $scope.height]);
-
-    $http.get('./miserables.json').success(function (graph) {
+        
+    $http.get('./realties/controllers/miserables.json').success(function (graph) {
         $scope.nodes = graph.nodes;
         $scope.links = graph.links;
 
@@ -22,9 +20,10 @@ angular.module('mean.realties').controller('Connections', function($scope, $http
         }
 
         for (var i = 0; i < $scope.nodes.length; i++) {
-            $scope.nodes[i].color = color($scope.nodes[i].group)
+            $scope.nodes[i].color = color($scope.nodes[i].group);
         }
-
+        
+        
         force
             .nodes($scope.nodes)
             .links($scope.links)
@@ -33,4 +32,4 @@ angular.module('mean.realties').controller('Connections', function($scope, $http
             })
             .start();
     });
-})
+}])

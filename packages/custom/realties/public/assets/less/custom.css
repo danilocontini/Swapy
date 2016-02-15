@@ -30,3 +30,7 @@ svg.stage {
   background-color: #0064cd;
   border-color: #005ac3;
 }
+svg .link {
+  stroke: rgba(0, 0, 0, 0.3);
+  stroke-width: 2px;
+}

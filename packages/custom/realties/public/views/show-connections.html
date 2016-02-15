@@ -7,7 +7,8 @@
     <div class="row">
         <div class="col-lg-12">
             <svg ng-attr-width="{{width}}"
-                 ng-attr-height="{{height}}">
+                 ng-attr-height="{{height}}"
+                 id="connections">
                 <line   ng-repeat="link in links"
                         class="link"
                         ng-attr-stroke-width="{{link.strokeWidth}}"
@@ -18,7 +19,7 @@
                 </line>
                 <circle ng-repeat="node in nodes"
                         class="node"
-                        r="5"
+                        r="10"
                         ng-attr-fill="{{node.color}}"
                         ng-attr-cx="{{node.x}}"
                         ng-attr-cy="{{node.y}}">

@@ -1,9 +1,15 @@
 {
   "name": "realties",
   "version": "0.0.1",
-  "description": "Realty module for MEAN applications",
+  "description": "Some description of realties",
   "author": {
-    "name": "Danilo",
-    "email": "danilocontini@gmail.com"
-  }
+    "name": "mean scaffold"
+  },
+  "mean": "0.5.5",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "dependencies": {},
+  "license": "MIT"
 }

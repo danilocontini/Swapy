@@ -1,0 +1,8 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/danilocontini/Sites/Swapy/bower_components/jquery/src/data/accepts.js",
+        "/Users/danilocontini/Sites/Swapy/bower_components/jquery/src/data/Data.js",
+        "/Users/danilocontini/Sites/Swapy/bower_components/jquery/src/data/support.js",
+        "/Users/danilocontini/Sites/Swapy/bower_components/jquery/src/data/var/acceptData.js"
+    ]
+}
