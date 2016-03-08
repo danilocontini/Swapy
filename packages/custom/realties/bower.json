@@ -1,8 +1,21 @@
 {
     "name": "realties",
     "version": "0.0.1",
+    "description": "",
+    "author": {
+        "name": "danilocontini";
+    },
     "dependencies":
     {
-        "d3": "d3"
+        /*
+        "bootstrap": "latest",
+        "d3": "latest",
+        "angular-ui-mask": "latest";
+        */
+    },
+    "licence": "MIT",
+    "scripts":
+    {
+        //"postinstall": "bower install";
     }
 }

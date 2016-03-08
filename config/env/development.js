@@ -9,7 +9,7 @@ module.exports = {
   //  aggregate: 'whatever that is not false, because boolean false value turns aggregation off', //false
   aggregate: true,
   mongoose: {
-    debug: false
+    debug: true
   },
   hostname: 'http://localhost:3000',
   app: {

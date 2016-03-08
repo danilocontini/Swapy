@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('mean.realties').controller('Connections', ['$scope', '$http', '$element', function($scope, $http, $element) {
-    $scope.width = document.getElementById("connections").parentElement.offsetWidth;
+angular.module('mean.realties').controller('Connections', ['$scope', '$http', '$document', function($scope, $http, $document) {
+    $scope.width = 1000;
     $scope.height = 500;
     
     var color = d3.scale.category20()
@@ -22,7 +22,6 @@ angular.module('mean.realties').controller('Connections', ['$scope', '$http', '$
         for (var i = 0; i < $scope.nodes.length; i++) {
             $scope.nodes[i].color = color($scope.nodes[i].group);
         }
-        
         
         force
             .nodes($scope.nodes)

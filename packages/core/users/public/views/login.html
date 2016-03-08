@@ -1,34 +1,57 @@
-<div data-ng-controller="LoginCtrl as login">
-
-    <div class="alert alert-danger animated fadeIn" ng-show="login.loginError">{{login.loginError}}</div>
-
-    <h2>Login</h2>
-
-    <form id="login_form" ng-submit="login.login()">
-        <div class="input-wrapper">
-            <input required id="email_block" type="email" name="email" placeholder="Email Address" ng-model="login.user.email">
-            <div class="error_message">Please enter a correct info #</div>
-            <span class="pic email"></span>
-        </div>
-        <div class="input-wrapper">
-            <input required id="password_block" name="password" type="{{login.input.type}}" placeholder="{{login.input.placeholder}}" ng-model="login.user.password">
-            <div class="error_message">Please enter a correct info #</div>
-                <span class="pic password {{login.input.iconClass}}" ng-click = "login.togglePasswordVisible()">
-                      <div class="hide_text_password">
-                          {{login.input.tooltipText}}
-                      </div>
-                </span>
-        </div>
-        <div class="forgot_password">
-            <a ui-sref='forgot-password'>Forgot your password?</a>
-        </div>
-        <div class="button_login">
-            <button type="submit" class="submit_button">Login</button>
-            <p>Don't have an account?</p>
-            <a ui-sref='auth.register' >Sign up</a>
-        </div>
-        <div class="woman_ninja_bottom">
-            <img src="/theme/assets/img/woman_ninja.png" alt="#">
-        </div>
-    </form>
+<div data-ng-controller="LoginCtrl as login"
+     layout-margin
+     layout="column">
+    <md-content flex layout-padding class="md-whiteframe-z1">
+        <h2 flex>Entrar</h2>
+        <form id="login_form" ng-submit="login.login()">
+            <md-content class="autoScroll">
+                <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Email</label>
+                    <md-icon class="material-icon">person</md-icon>
+                    <input ng-model="login.user.email"
+                           name="email"
+                           id="email_block"
+                           type="email"
+                           required>
+                    <div ng-messages="login.loginError">
+                        <div ng-message="required">Campo obrigatório.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container md-no-float class="md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>{{login.input.placeholder}}</label>
+                    <md-icon class="material-icon">vpn_key</md-icon>
+                    <input ng-model="login.user.password"
+                           id="password_block"
+                           name="password"
+                           type="{{login.input.type}}"
+                           required>
+                    <md-icon ng-click="login.togglePasswordVisible()"
+                             aria-label="Visibility"
+                             class="material-icons"
+                             style="display:inline-block">
+                        {{login.input.iconClass}}
+                    </md-icon>
+                </md-input-container>
+                <md-content class="md-block" layout="row">
+                    <div ui-sref='forgot-password'>
+                        <span class="md-caption">Esqueceu a senha?</span>
+                    </div>
+                    <span flex></span>
+                    <div ui-sref='auth.register'>
+                        <span class="md-caption">Cadastrar</span>
+                    </div>
+                </md-content>
+                <div ng-if="login.loginError" ng-messages="login.loginError">{{login.loginError}}</div>
+            </md-content>
+            <md-button layout-fill
+                       flex
+                       class="md-raised md-primary md-block"
+                       type="submit">
+                <span>Entrar</span>
+                <md-icon class="material-icon">send</md-icon>
+            </md-button>
+        </form>
+    </md-content>
 </div>

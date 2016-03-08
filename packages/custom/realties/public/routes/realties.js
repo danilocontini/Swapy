@@ -2,15 +2,15 @@
 
 angular.module('mean.realties').config(['$stateProvider',
   function($stateProvider) {
-    $stateProvider.state('realties example page', {
-      url: '/realties/example',
+    $stateProvider.state('realties', {
+      url: '/realties',
       templateUrl: 'realties/views/index.html'
-    });
-    $stateProvider.state('register', {
+    })
+    .state('register', {
       url: '/register-realty',
       templateUrl: 'realties/views/register-realty.html'
-    });
-    $stateProvider.state('connections', {
+    })
+    .state('connections', {
       url: '/connections',
       templateUrl: 'realties/views/show-connections.html'
     });

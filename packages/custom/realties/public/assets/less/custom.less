@@ -1,5 +1,8 @@
 @import "vars.less";
-.footer{
+body {
+    overflow: hidden;
+}
+.footer {
     border-top: 1px solid #cccccc;
 }
 body.login{
@@ -10,33 +13,37 @@ svg.stage {
     min-height: 300px;
     overflow: visible;
 }
-.navbar-custom {
-    background-color: @primaryColor;
-	border-color: @primaryColor - 10%;
-    a {
-        color: #FFFFFF;
-    }
-    .navbar-nav > a {
-        color: #FFFFFF;
-        &,
-        &:hover,
-        &:focus {
-            background-color: @primaryColor - 50%;
-        }
-    }
-    // Open dropdowns
-    .open > a {
-        &,
-        &:hover,
-        &:focus {
-            background-color: @primaryColor - 50%;
-            border-color: @primaryColor - 60%;
-        }
-    }
-}
 svg {
     .link {
         stroke: rgba(0,0,0,0.3);
         stroke-width: 2px;
     }
+}
+.icon-swapy:before {
+    content: "\e900";
+}
+@font-face {
+    font-family: 'icomoon';
+    src: url('/realties/assets/fonts/icomoon.eot?11log8');
+    src: url('/realties/assets/fonts/icomoon.eot?11log8#iefix') format('embedded-opentype'),
+         url('/realties/assets/fonts/icomoon.ttf?11log8') format('truetype'),
+         url('/realties/assets/fonts/icomoon.woff?11log8') format('woff'),
+         url('/realties/assets/fonts/icomoon.svg?11log8#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

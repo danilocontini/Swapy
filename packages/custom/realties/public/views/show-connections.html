@@ -1,21 +1,15 @@
 <div class="container" ng-controller="Connections">
     <div class="row">
-        <div class="col-lg-12">
-            <div id="connections"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" id="connections">
             <svg ng-attr-width="{{width}}"
-                 ng-attr-height="{{height}}"
-                 id="connections">
-                <line   ng-repeat="link in links"
-                        class="link"
-                        ng-attr-stroke-width="{{link.strokeWidth}}"
-                        ng-attr-x1="{{link.source.x}}"
-                        ng-attr-y1="{{link.source.y}}"
-                        ng-attr-x2="{{link.target.x}}"
-                        ng-attr-y2="{{link.target.y}}">
+                 ng-attr-height="{{height}}">
+                <line ng-repeat="link in links"
+                      class="link"
+                      ng-attr-stroke-width="{{link.strokeWidth}}"
+                      ng-attr-x1="{{link.source.x}}"
+                      ng-attr-y1="{{link.source.y}}"
+                      ng-attr-x2="{{link.target.x}}"
+                      ng-attr-y2="{{link.target.y}}">
                 </line>
                 <circle ng-repeat="node in nodes"
                         class="node"

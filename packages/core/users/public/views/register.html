@@ -1,66 +1,85 @@
-<div data-ng-controller="RegisterCtrl as reg">
-    <div ng-repeat="error in reg.registerError">
-        <div class="alert alert-danger animated fadeIn">{{error.msg}}</div>
-    </div>
-    <div class="alert alert-danger animated fadeIn" ng-show="reg.usernameError">{{reg.usernameError}}</div>
-    <div class="alert alert-danger animated fadeIn" ng-show="reg.emailError">{{reg.emailError}}</div>
-    <form id="register_form" ng-submit="reg.register()">
-        <h2>Sign Up</h2>
-
-        <div class="input-wrapper">
-            <input required id="name" type="text" name="name" placeholder="Full Name"
-                   ng-model="reg.user.name">
-
-            <div class="error_message">Please enter a correct info #</div>
-            <span class="pic user"></span>
+<div data-ng-controller="RegisterCtrl as reg"
+     layout-margin
+     layout="column">
+    <md-content flex layout-padding class="md-whiteframe-z1">
+        <div ng-repeat="error in reg.registerError">
+            <div ng-message="error.msg">{{error.msg}}</div>
         </div>
-
-        <div class="input-wrapper">
-            <input required id="email_block" type="email" name="email" placeholder="Email Address"
-                   ng-model="reg.user.email">
-
-            <div class="error_message">Please enter a correct info #</div>
-            <span class="pic email"></span>
-        </div>
-
-        <div class="input-wrapper">
-            <input required id="username" type="text" name="username" placeholder="Username"
-                   ng-model="reg.user.username">
-
-            <div class="error_message">Please enter a correct info #</div>
-            <span class="pic username"></span>
-        </div>
-
-        <div class="input-wrapper">
-            <input required id="password_block" name="password" type="{{reg.input.type}}"
-                   placeholder="{{reg.input.placeholder}}" ng-model="reg.user.password">
-
-            <div class="error_message">Please enter a correct info #</div>
-        <span class="pic password {{reg.input.iconClass}}" ng-click="reg.togglePasswordVisible()">
-              <div class="hide_text_password">
-                  {{reg.input.tooltipText}}
-              </div>
-        </span>
-        </div>
-        <div class="input-wrapper">
-            <input required id="confirm_password" name="confirm_password" type="{{reg.input.type}}"
-                   placeholder="{{reg.input.placeholderConfirmPass}}" ng-model="reg.user.confirmPassword">
-
-            <div class="error_message">Please enter a correct info #</div>
-        <span class="pic password {{reg.input.iconClassConfirmPass}}" ng-click="reg.togglePasswordConfirmVisible()">
-              <div class="hide_text_password">
-                  {{reg.input.tooltipTextConfirmPass}}
-              </div>
-        </span>
-        </div>
-
-        <div class="button_register">
-            <button type="submit" class="submit_button">Sign up</button>
-            <p>Already have an account?</p>
-            <a ui-sref='auth.login'>Log in</a>
-        </div>
-        <div class="woman_ninja_bottom">
-            <img src="/theme/assets/img/woman_ninja.png" alt="#">
-        </div>
+        <form id="register_form" ng-submit="reg.register()">
+        <h2>Registrar</h2>
+        <md-input-container class="md-icon-float md-block">
+            <!-- Use floating label instead of placeholder -->
+            <label>Nome Completo</label>
+            <md-icon class="material-icon">person</md-icon>
+            <input ng-model="reg.user.name"
+                   id="name"
+                   name="name"
+                   type="text"
+                   required>
+            <div ng-messages="reg.usernameError">
+                <div ng-message="{{reg.usernameError}}">{{reg.usernameError}}</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+            <!-- Use floating label instead of placeholder -->
+            <label>Email</label>
+            <md-icon class="material-icon">person</md-icon>
+            <input ng-model="reg.user.email"
+                   id="email_block"
+                   name="email"
+                   type="email"
+                   required>
+            <div ng-messages="reg.emailError">
+                <div ng-message="{{reg.emailError}}">{{reg.emailError}}</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+            <!-- Use floating label instead of placeholder -->
+            <label>Usuário</label>
+            <md-icon class="material-icon">person</md-icon>
+            <input ng-model="reg.user.username"
+                   id="username"
+                   name="username"
+                   type="text"
+                   required>
+        </md-input-container>    
+        <md-input-container class="md-icon-float md-block">
+            <!-- Use floating label instead of placeholder -->
+            <label>{{reg.input.placeholder}}</label>
+            <md-icon class="material-icon">vpn_key</md-icon>
+            <input ng-model="reg.user.password"
+                   id="password_block"
+                   name="password"
+                   type="{{reg.input.type}}"
+                   required>
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+            <!-- Use floating label instead of placeholder -->
+            <label>{{reg.input.placeholderConfirmPass}}</label>
+            <md-icon class="material-icon">vpn_key</md-icon>
+            <input ng-model="reg.user.confirmPassword"
+                   id="confirm_password"
+                   name="confirm_password"
+                   type="{{reg.input.type}}"
+                   required>
+            <md-icon ng-click="reg.togglePasswordConfirmVisible()"
+                     aria-label="{{reg.input.tooltipTextConfirmPass}}"
+                     class="material-icons"
+                     style="display:inline-block">
+                {{reg.input.iconClassConfirmPass}}
+            </md-icon>
+        </md-input-container>
+            <div class="md-caption">
+                <span>Já possui uma conta? </span><span ui-sref='auth.login'>Entrar!</span>
+            </div>
+            <md-button layout-margin
+                       flex
+                       class="md-raised md-primary md-block"
+                       style="width: 100%"
+                       type="submit">
+                <span>Registrar</span>
+                <md-icon class="material-icon">send</md-icon>
+            </md-button>
     </form>
+    </md-content>
 </div>

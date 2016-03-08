@@ -18,8 +18,8 @@ Realties.register(function(app, auth, database) {
 
   //We are adding a link to the main menu for all authenticated users
   Realties.menus.add({
-    title: 'Imóveis',
-    link: 'realties example page',
+    title: 'Início',
+    link: 'realties',
     roles: ['authenticated'],
     menu: 'main'
   });
@@ -30,7 +30,7 @@ Realties.register(function(app, auth, database) {
     menu: 'main'
   });
   Realties.menus.add({
-    title: 'Conexões',
+    title: 'Combinações',
     link: 'connections',
     roles: ['authenticated'],
     menu: 'main'
@@ -38,7 +38,7 @@ Realties.register(function(app, auth, database) {
   
   Realties.aggregateAsset('css', 'realties.css');
   Realties.aggregateAsset('css', '../less/custom.css');
-  Realties.aggregateAsset('js', 'd3.v3.min.js');
+  //Realties.aggregateAsset('js', 'd3.v3.min.js');
 
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
@@ -61,6 +61,7 @@ Realties.register(function(app, auth, database) {
         //you now have the settings object
     });
     */
-
+    //Realties.angularDependencies(['d3']);
+    //Realties.angularDependencies(['ui-mask']);
   return Realties;
 });

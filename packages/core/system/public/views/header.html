@@ -1,4 +1,5 @@
-<nav class="navbar navbar-inverse" data-role="navigation" ng-controller="HeaderController as hdrctr">
+<div class="" data-role="navigation" ng-controller="HeaderController as hdrctr">
+    <!--
     <div class="page-header">
         <div class="navbar-header">
             <div class="logo pull-left">
@@ -44,4 +45,53 @@
             </div>
         </div>
     </div>
-</nav>
+    -->
+    
+    <md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+        <md-toolbar class="md-tall md-hue-2">
+            <span flex></span>
+            <div layout="column" class="md-toolbar-tools-bottom inset">
+                <user-avatar></user-avatar>
+                <span></span>
+                <div>{{hdrctr.hdrvars.user.name}}</div>
+                <div>{{hdrctr.hdrvars.user.email}}</div>
+            </div>
+        </md-toolbar>
+        <md-list>
+            <md-list-item ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" ng-repeat="item in hdrctr.menus.main">
+                <a>
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                        </div>
+                        <div class="inset" mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</div>
+                    </md-item-content>
+                </a>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-item ng-repeat="item in admin">
+                <a>
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                        </div>
+                        <div class="inset">{{item.title}}
+                        </div>
+                    </md-item-content>
+                </a>
+            </md-item>
+        </md-list>
+    </md-sidenav>
+    <div layout="column" class="relative" layout-fill role="main">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span flex class="flex"></span>
+                <md-button class="md-icon-button" ng-click="toggleSidenav('right')" aria-label="Menu">
+                    <ng-md-icon icon="menu"></ng-md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+    </div>
+    
+    
+</div>
