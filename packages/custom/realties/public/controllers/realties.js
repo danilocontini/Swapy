@@ -1,13 +1,29 @@
 'use strict';
 
 /* jshint -W098 */
-angular.module('mean.realties').controller('RealtiesController', ['$scope', 'Global', 'Realties',
-  function($scope, Global, Realties) {
-    $scope.global = Global;
-    $scope.package = {
-      name: 'realties'
-    };
-  }
+angular.module('mean.realties').controller('RealtiesController', ['$scope',
+  function($scope) {
+      $scope.contactType = [
+	      'teste 1',
+	      'teste 2',
+	      'teste 3',
+	      'teste 4',
+	      'teste 5'
+      ];
+	  $scope.create = function (isValid) {
+		  if (isValid) {
+			  var owner = new Articles($scope.article);
+			  article.$save(function (response) {
+				  return true;
+			  });
+
+			  $scope.owner = {};
+
+		  } else {
+			  $scope.submitted = true;
+		  }
+	  }
+	};
 ])
 .config(function($mdThemingProvider) {
   $mdThemingProvider.definePalette('amazingPaletteName', {

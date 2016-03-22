@@ -3,7 +3,7 @@
      layout="column">
     <md-content flex layout-padding class="md-whiteframe-z1">
         <h2 flex>Entrar</h2>
-        <form id="login_form" ng-submit="login.login()">
+        <form id="login_form" ng-submit="login.login()" novalidate>
             <md-content class="autoScroll">
                 <md-input-container class="md-icon-float md-block">
                     <!-- Use floating label instead of placeholder -->
@@ -14,7 +14,7 @@
                            id="email_block"
                            type="email"
                            required>
-                    <div ng-messages="login.loginError">
+                    <div ng-messages="login.loginError.$require">
                         <div ng-message="required">Campo obrigatório.</div>
                     </div>
                 </md-input-container>

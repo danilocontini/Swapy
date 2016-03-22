@@ -1,12 +1,12 @@
-<div ng-controller="RealtiesController"
+<div ng-controller="RealtiesController as rlt"
      layout-fill
      layout="column"
      class="md-form">
     <md-tabs md-dynamic-height md-border-bottom md-autoselect>
         <md-tab label="Proprietário">
             <md-content layout-margin class="md-whiteframe-z1">
-                <form name="owner">
-                    <div layout-gt-sm="row">
+                <form name="owner" ng-submit="registerOwner()" novalidate>
+                    <div layout="column">
                         <md-input-container class="md-block"  flex-gt-md>
                             <label>Nome</label>
                             <input ng-model="owner.firstName">
@@ -21,8 +21,8 @@
                         </md-input-container>
                         <md-input-container class="md-inline-block" flex-sm>
                             <label></label>
-                            <md-select ng-model="owner.contactType">
-                                <md-option ng-repeat="i in ['Telefone','Celular','Email']">
+                            <md-select ng-model="rlt.contactType">
+                                <md-option ng-repeat="i in contactType" value="{{i}}">
                                     {{i}}
                                 </md-option>
                             </md-select>
@@ -31,6 +31,10 @@
                             <label>Contato</label>
                             <input ng-model="owner.inputContactType">
                         </md-input-container>
+                    </div>
+                    <div layout-gt-sm="row">
+                        <p>{{rlt.contactType}}</p>
+                        <span flex></span>
                         <md-button >
                             <span>Adicionar Contato</span>
                         </md-button>

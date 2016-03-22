@@ -37,7 +37,7 @@ Realties.register(function(app, auth, database) {
   });
   
   Realties.aggregateAsset('css', 'realties.css');
-  Realties.aggregateAsset('css', '../less/custom.css');
+  Realties.aggregateAsset('css', '../less/custom.css', {weight: 1000});
   //Realties.aggregateAsset('js', 'd3.v3.min.js');
 
   /**

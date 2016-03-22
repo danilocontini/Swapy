@@ -72,3 +72,7 @@ modules/views/
 # vim Files
 # --------------------
 *.swp
+
+logs/mongodb.log.2016-03-10T01-27-33
+
+.brackets.json

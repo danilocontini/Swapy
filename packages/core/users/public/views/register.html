@@ -5,7 +5,7 @@
         <div ng-repeat="error in reg.registerError">
             <div ng-message="error.msg">{{error.msg}}</div>
         </div>
-        <form id="register_form" ng-submit="reg.register()">
+        <form id="register_form" ng-submit="reg.register()" novalidate>
         <h2>Registrar</h2>
         <md-input-container class="md-icon-float md-block">
             <!-- Use floating label instead of placeholder -->
