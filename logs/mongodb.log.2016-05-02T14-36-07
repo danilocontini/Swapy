@@ -1,0 +1,203 @@
+2016-04-29T00:17:42.618-0300 W -        [initandlisten] Detected unclean shutdown - /data/db/mongod.lock is not empty.
+2016-04-29T00:17:42.708-0300 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+2016-04-29T00:17:42.710-0300 I JOURNAL  [initandlisten] recover begin
+2016-04-29T00:17:43.036-0300 I JOURNAL  [initandlisten] recover lsn: 0
+2016-04-29T00:17:43.107-0300 I JOURNAL  [initandlisten] recover /data/db/journal/j._0
+2016-04-29T00:17:43.261-0300 I JOURNAL  [initandlisten] recover cleaning up
+2016-04-29T00:17:43.266-0300 I JOURNAL  [initandlisten] removeJournalFiles
+2016-04-29T00:17:43.267-0300 I JOURNAL  [initandlisten] recover done
+2016-04-29T00:17:43.521-0300 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.96
+2016-04-29T00:17:43.593-0300 I JOURNAL  [durability] Durability thread started
+2016-04-29T00:17:43.593-0300 I CONTROL  [initandlisten] MongoDB starting : pid=1589 port=27017 dbpath=/data/db 64-bit host=MacBook-de-Danilo.local
+2016-04-29T00:17:43.594-0300 I JOURNAL  [journal writer] Journal writer thread started
+2016-04-29T00:17:43.594-0300 I CONTROL  [initandlisten] 
+2016-04-29T00:17:43.595-0300 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2016-04-29T00:17:43.596-0300 I CONTROL  [initandlisten] db version v3.0.7
+2016-04-29T00:17:43.616-0300 I CONTROL  [initandlisten] git version: nogitversion
+2016-04-29T00:17:43.635-0300 I CONTROL  [initandlisten] build info: Darwin yosemitevm.local 14.5.0 Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2016-04-29T00:17:43.673-0300 I CONTROL  [initandlisten] allocator: system
+2016-04-29T00:17:43.674-0300 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, systemLog: { destination: "file", path: "/Users/danilocontini/Sites/Swapy/logs/mongodb.log" } }
+2016-04-29T00:17:48.464-0300 I QUERY    [initandlisten] query admin.system.roles planSummary: EOF ntoreturn:0 ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:0 reslen:20 locks:{ Global: { acquireCount: { r: 2 } }, MMAPV1Journal: { acquireCount: { r: 1 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { R: 1 } } } 159ms
+2016-04-29T00:17:48.548-0300 I NETWORK  [initandlisten] waiting for connections on port 27017
+2016-04-29T00:42:00.542-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56090 #1 (1 connection now open)
+2016-04-29T00:42:00.592-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56091 #2 (2 connections now open)
+2016-04-29T00:42:00.603-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56092 #3 (3 connections now open)
+2016-04-29T00:42:00.613-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56093 #4 (4 connections now open)
+2016-04-29T00:42:00.615-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56094 #5 (5 connections now open)
+2016-04-29T20:09:50.980-0300 I NETWORK  [conn5] end connection 127.0.0.1:56094 (4 connections now open)
+2016-04-29T20:09:50.985-0300 I NETWORK  [conn4] end connection 127.0.0.1:56093 (4 connections now open)
+2016-04-29T20:09:50.985-0300 I NETWORK  [conn1] end connection 127.0.0.1:56090 (4 connections now open)
+2016-04-29T20:09:50.985-0300 I NETWORK  [conn3] end connection 127.0.0.1:56092 (4 connections now open)
+2016-04-29T20:09:50.985-0300 I NETWORK  [conn2] end connection 127.0.0.1:56091 (4 connections now open)
+2016-05-02T21:55:59.298-0300 I STORAGE  [DataFileSync] flushing mmaps took 27620763ms  for 8 files
+2016-05-04T05:54:49.691-0300 I STORAGE  [DataFileSync] flushing mmaps took 3183482ms  for 8 files
+2016-05-04T10:25:49.027-0300 I STORAGE  [DataFileSync] flushing mmaps took 3183627ms  for 8 files
+2016-05-04T12:14:14.003-0300 I STORAGE  [DataFileSync] flushing mmaps took 3182886ms  for 8 files
+2016-05-04T13:08:27.085-0300 I STORAGE  [DataFileSync] flushing mmaps took 3184101ms  for 8 files
+2016-05-05T05:52:52.057-0300 I STORAGE  [DataFileSync] flushing mmaps took 3174691ms  for 8 files
+2016-05-06T04:35:53.733-0300 I STORAGE  [DataFileSync] flushing mmaps took 3174009ms  for 8 files
+2016-05-07T07:34:57.777-0300 I STORAGE  [DataFileSync] flushing mmaps took 3171570ms  for 8 files
+2016-05-07T08:29:04.030-0300 I STORAGE  [DataFileSync] flushing mmaps took 3171429ms  for 8 files
+2016-05-07T09:23:14.020-0300 I STORAGE  [DataFileSync] flushing mmaps took 3172515ms  for 8 files
+2016-05-07T11:11:33.083-0300 I STORAGE  [DataFileSync] flushing mmaps took 3170788ms  for 8 files
+2016-05-07T16:36:32.024-0300 I STORAGE  [DataFileSync] flushing mmaps took 3171352ms  for 8 files
+2016-05-08T11:34:10.851-0300 I STORAGE  [DataFileSync] flushing mmaps took 3172168ms  for 8 files
+2016-05-08T15:10:47.019-0300 I STORAGE  [DataFileSync] flushing mmaps took 3172025ms  for 8 files
+2016-05-08T23:18:17.032-0300 I STORAGE  [DataFileSync] flushing mmaps took 3172762ms  for 8 files
+2016-05-09T00:12:27.045-0300 I STORAGE  [DataFileSync] flushing mmaps took 3171983ms  for 8 files
+2016-05-10T14:14:36.967-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52835 #6 (1 connection now open)
+2016-05-10T14:14:36.980-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52836 #7 (2 connections now open)
+2016-05-10T14:14:37.008-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52837 #8 (3 connections now open)
+2016-05-10T14:14:37.009-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52838 #9 (4 connections now open)
+2016-05-10T14:14:37.009-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52839 #10 (5 connections now open)
+2016-05-10T14:14:43.966-0300 I COMMAND  [conn8] command mean-dev.$cmd command: listIndexes { listIndexes: "circles", cursor: {} } keyUpdates:0 writeConflicts:0 numYields:0 reslen:294 locks:{ Global: { acquireCount: { r: 2 } }, MMAPV1Journal: { acquireCount: { r: 1 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { R: 1 } } } 109ms
+2016-05-10T14:14:48.707-0300 I QUERY    [conn8] query mean-dev.circles query: { name: "can create content" } planSummary: IXSCAN { name: 1 } ntoskip:0 nscanned:1 nscannedObjects:1 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:1 reslen:118 locks:{ Global: { acquireCount: { r: 4 } }, MMAPV1Journal: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { R: 2 } } } 301ms
+2016-05-10T14:14:48.709-0300 I QUERY    [conn7] query mean-dev.circles query: { name: "can edit content" } planSummary: IXSCAN { name: 1 } ntoskip:0 nscanned:1 nscannedObjects:1 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:1 reslen:118 locks:{ Global: { acquireCount: { r: 4 } }, MMAPV1Journal: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { R: 2 } } } 301ms
+2016-05-10T14:14:48.709-0300 I QUERY    [conn6] query mean-dev.circles query: { name: "can delete content" } planSummary: IXSCAN { name: 1 } ntoskip:0 nscanned:1 nscannedObjects:1 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:1 reslen:107 locks:{ Global: { acquireCount: { r: 4 } }, MMAPV1Journal: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { R: 2 } } } 317ms
+2016-05-10T14:14:48.709-0300 I QUERY    [conn9] query mean-dev.circles query: { name: "authenticated" } planSummary: IXSCAN { name: 1 } ntoskip:0 nscanned:1 nscannedObjects:1 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:1 reslen:115 locks:{ Global: { acquireCount: { r: 4 } }, MMAPV1Journal: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { R: 2 } } } 301ms
+2016-05-10T14:14:48.709-0300 I QUERY    [conn10] query mean-dev.circles query: { name: "admin" } planSummary: IXSCAN { name: 1 } ntoskip:0 nscanned:1 nscannedObjects:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:1 reslen:67 locks:{ Global: { acquireCount: { r: 2 } }, MMAPV1Journal: { acquireCount: { r: 1 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { R: 1 } } } 317ms
+2016-05-10T16:43:57.499-0300 I QUERY    [conn7] query mean-dev.circles query: { orderby: { circle: 1 }, $query: {} } planSummary: COLLSCAN, COLLSCAN ntoreturn:1000 ntoskip:0 nscanned:0 nscannedObjects:12 scanAndOrder:1 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:6 reslen:531 locks:{ Global: { acquireCount: { r: 4 } }, MMAPV1Journal: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { R: 2 } } } 311ms
+2016-05-10T16:44:33.321-0300 I NETWORK  [conn9] end connection 127.0.0.1:52838 (4 connections now open)
+2016-05-10T16:44:33.321-0300 I NETWORK  [conn8] end connection 127.0.0.1:52837 (4 connections now open)
+2016-05-10T16:44:33.321-0300 I NETWORK  [conn6] end connection 127.0.0.1:52835 (4 connections now open)
+2016-05-10T16:44:33.321-0300 I NETWORK  [conn7] end connection 127.0.0.1:52836 (4 connections now open)
+2016-05-10T16:44:33.321-0300 I NETWORK  [conn10] end connection 127.0.0.1:52839 (4 connections now open)
+2016-05-10T16:44:37.783-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54089 #11 (1 connection now open)
+2016-05-10T16:44:37.808-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54090 #12 (2 connections now open)
+2016-05-10T16:44:37.809-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54091 #13 (3 connections now open)
+2016-05-10T16:44:37.810-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54092 #14 (4 connections now open)
+2016-05-10T16:44:37.810-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54093 #15 (5 connections now open)
+2016-05-10T16:46:38.886-0300 I NETWORK  [conn12] end connection 127.0.0.1:54090 (4 connections now open)
+2016-05-10T16:46:38.887-0300 I NETWORK  [conn11] end connection 127.0.0.1:54089 (4 connections now open)
+2016-05-10T16:46:38.887-0300 I NETWORK  [conn15] end connection 127.0.0.1:54093 (4 connections now open)
+2016-05-10T16:46:38.887-0300 I NETWORK  [conn14] end connection 127.0.0.1:54092 (4 connections now open)
+2016-05-10T16:46:38.887-0300 I NETWORK  [conn13] end connection 127.0.0.1:54091 (4 connections now open)
+2016-05-10T16:46:41.446-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54136 #16 (1 connection now open)
+2016-05-10T16:46:41.447-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54137 #17 (2 connections now open)
+2016-05-10T16:46:41.447-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54138 #18 (3 connections now open)
+2016-05-10T16:46:41.448-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54139 #19 (4 connections now open)
+2016-05-10T16:46:41.448-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54140 #20 (5 connections now open)
+2016-05-10T22:49:38.710-0300 I NETWORK  [conn20] end connection 127.0.0.1:54140 (4 connections now open)
+2016-05-10T22:49:38.710-0300 I NETWORK  [conn19] end connection 127.0.0.1:54139 (4 connections now open)
+2016-05-10T22:49:38.710-0300 I NETWORK  [conn18] end connection 127.0.0.1:54138 (4 connections now open)
+2016-05-10T22:49:38.710-0300 I NETWORK  [conn17] end connection 127.0.0.1:54137 (4 connections now open)
+2016-05-10T22:49:38.710-0300 I NETWORK  [conn16] end connection 127.0.0.1:54136 (4 connections now open)
+2016-05-10T22:49:45.951-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56496 #21 (1 connection now open)
+2016-05-10T22:49:45.952-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56497 #22 (2 connections now open)
+2016-05-10T22:49:45.963-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56498 #23 (3 connections now open)
+2016-05-10T22:49:45.974-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56499 #24 (4 connections now open)
+2016-05-10T22:49:45.976-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56500 #25 (5 connections now open)
+2016-05-10T22:50:00.963-0300 I NETWORK  [conn25] end connection 127.0.0.1:56500 (4 connections now open)
+2016-05-10T22:50:00.963-0300 I NETWORK  [conn24] end connection 127.0.0.1:56499 (4 connections now open)
+2016-05-10T22:50:00.963-0300 I NETWORK  [conn23] end connection 127.0.0.1:56498 (4 connections now open)
+2016-05-10T22:50:00.963-0300 I NETWORK  [conn22] end connection 127.0.0.1:56497 (4 connections now open)
+2016-05-10T22:50:00.963-0300 I NETWORK  [conn21] end connection 127.0.0.1:56496 (4 connections now open)
+2016-05-10T22:50:04.500-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56543 #26 (1 connection now open)
+2016-05-10T22:50:04.510-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56544 #27 (2 connections now open)
+2016-05-10T22:50:04.521-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56545 #28 (3 connections now open)
+2016-05-10T22:50:04.532-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56546 #29 (4 connections now open)
+2016-05-10T22:50:04.542-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56547 #30 (5 connections now open)
+2016-05-10T23:00:40.477-0300 I NETWORK  [conn30] end connection 127.0.0.1:56547 (4 connections now open)
+2016-05-10T23:00:40.478-0300 I NETWORK  [conn29] end connection 127.0.0.1:56546 (4 connections now open)
+2016-05-10T23:00:40.479-0300 I NETWORK  [conn28] end connection 127.0.0.1:56545 (4 connections now open)
+2016-05-10T23:00:40.480-0300 I NETWORK  [conn27] end connection 127.0.0.1:56544 (3 connections now open)
+2016-05-10T23:00:40.481-0300 I NETWORK  [conn26] end connection 127.0.0.1:56543 (3 connections now open)
+2016-05-10T23:00:44.147-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56644 #31 (1 connection now open)
+2016-05-10T23:00:44.174-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56645 #32 (2 connections now open)
+2016-05-10T23:00:44.184-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56646 #33 (3 connections now open)
+2016-05-10T23:00:44.191-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56647 #34 (4 connections now open)
+2016-05-10T23:00:44.193-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56648 #35 (5 connections now open)
+2016-05-10T23:03:14.446-0300 I NETWORK  [conn35] end connection 127.0.0.1:56648 (4 connections now open)
+2016-05-10T23:03:14.449-0300 I NETWORK  [conn34] end connection 127.0.0.1:56647 (4 connections now open)
+2016-05-10T23:03:14.449-0300 I NETWORK  [conn33] end connection 127.0.0.1:56646 (4 connections now open)
+2016-05-10T23:03:14.449-0300 I NETWORK  [conn32] end connection 127.0.0.1:56645 (4 connections now open)
+2016-05-10T23:03:14.449-0300 I NETWORK  [conn31] end connection 127.0.0.1:56644 (4 connections now open)
+2016-05-10T23:03:18.562-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56689 #36 (1 connection now open)
+2016-05-10T23:03:18.572-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56690 #37 (2 connections now open)
+2016-05-10T23:03:18.583-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56691 #38 (3 connections now open)
+2016-05-10T23:03:18.594-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56692 #39 (4 connections now open)
+2016-05-10T23:03:18.605-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56693 #40 (5 connections now open)
+2016-05-10T23:06:23.974-0300 I NETWORK  [conn40] end connection 127.0.0.1:56693 (4 connections now open)
+2016-05-10T23:06:23.975-0300 I NETWORK  [conn39] end connection 127.0.0.1:56692 (4 connections now open)
+2016-05-10T23:06:23.975-0300 I NETWORK  [conn36] end connection 127.0.0.1:56689 (4 connections now open)
+2016-05-10T23:06:23.975-0300 I NETWORK  [conn38] end connection 127.0.0.1:56691 (4 connections now open)
+2016-05-10T23:06:23.975-0300 I NETWORK  [conn37] end connection 127.0.0.1:56690 (4 connections now open)
+2016-05-10T23:06:26.424-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56740 #41 (1 connection now open)
+2016-05-10T23:06:26.424-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56741 #42 (2 connections now open)
+2016-05-10T23:06:26.425-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56742 #43 (3 connections now open)
+2016-05-10T23:06:26.442-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56743 #44 (4 connections now open)
+2016-05-10T23:06:26.442-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56744 #45 (5 connections now open)
+2016-05-10T23:29:13.013-0300 I NETWORK  [conn45] end connection 127.0.0.1:56744 (4 connections now open)
+2016-05-10T23:29:13.014-0300 I NETWORK  [conn44] end connection 127.0.0.1:56743 (4 connections now open)
+2016-05-10T23:29:13.014-0300 I NETWORK  [conn43] end connection 127.0.0.1:56742 (4 connections now open)
+2016-05-10T23:29:13.014-0300 I NETWORK  [conn42] end connection 127.0.0.1:56741 (4 connections now open)
+2016-05-10T23:29:13.014-0300 I NETWORK  [conn41] end connection 127.0.0.1:56740 (4 connections now open)
+2016-05-10T23:29:18.596-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56938 #46 (1 connection now open)
+2016-05-10T23:29:18.597-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56939 #47 (2 connections now open)
+2016-05-10T23:29:18.607-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56940 #48 (3 connections now open)
+2016-05-10T23:29:18.636-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56941 #49 (4 connections now open)
+2016-05-10T23:29:18.637-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56943 #50 (5 connections now open)
+2016-05-10T23:29:55.797-0300 I NETWORK  [conn50] end connection 127.0.0.1:56943 (4 connections now open)
+2016-05-10T23:29:55.798-0300 I NETWORK  [conn49] end connection 127.0.0.1:56941 (4 connections now open)
+2016-05-10T23:29:55.798-0300 I NETWORK  [conn48] end connection 127.0.0.1:56940 (4 connections now open)
+2016-05-10T23:29:55.798-0300 I NETWORK  [conn47] end connection 127.0.0.1:56939 (4 connections now open)
+2016-05-10T23:29:55.798-0300 I NETWORK  [conn46] end connection 127.0.0.1:56938 (4 connections now open)
+2016-05-10T23:29:59.796-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56989 #51 (1 connection now open)
+2016-05-10T23:29:59.806-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56990 #52 (2 connections now open)
+2016-05-10T23:29:59.817-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56991 #53 (3 connections now open)
+2016-05-10T23:29:59.828-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56992 #54 (4 connections now open)
+2016-05-10T23:29:59.832-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56993 #55 (5 connections now open)
+2016-05-10T23:30:31.208-0300 I NETWORK  [conn55] end connection 127.0.0.1:56993 (4 connections now open)
+2016-05-10T23:30:31.209-0300 I NETWORK  [conn54] end connection 127.0.0.1:56992 (4 connections now open)
+2016-05-10T23:30:31.209-0300 I NETWORK  [conn53] end connection 127.0.0.1:56991 (4 connections now open)
+2016-05-10T23:30:31.209-0300 I NETWORK  [conn52] end connection 127.0.0.1:56990 (4 connections now open)
+2016-05-10T23:30:31.209-0300 I NETWORK  [conn51] end connection 127.0.0.1:56989 (4 connections now open)
+2016-05-10T23:30:33.733-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57034 #56 (1 connection now open)
+2016-05-10T23:30:33.734-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57035 #57 (2 connections now open)
+2016-05-10T23:30:33.734-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57036 #58 (3 connections now open)
+2016-05-10T23:30:33.735-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57037 #59 (4 connections now open)
+2016-05-10T23:30:33.736-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57038 #60 (5 connections now open)
+2016-05-10T23:31:27.383-0300 I NETWORK  [conn60] end connection 127.0.0.1:57038 (4 connections now open)
+2016-05-10T23:31:27.384-0300 I NETWORK  [conn59] end connection 127.0.0.1:57037 (4 connections now open)
+2016-05-10T23:31:27.384-0300 I NETWORK  [conn58] end connection 127.0.0.1:57036 (4 connections now open)
+2016-05-10T23:31:27.385-0300 I NETWORK  [conn57] end connection 127.0.0.1:57035 (3 connections now open)
+2016-05-10T23:31:27.385-0300 I NETWORK  [conn56] end connection 127.0.0.1:57034 (3 connections now open)
+2016-05-10T23:31:29.620-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57111 #61 (1 connection now open)
+2016-05-10T23:31:29.621-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57112 #62 (2 connections now open)
+2016-05-10T23:31:29.622-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57113 #63 (3 connections now open)
+2016-05-10T23:31:29.622-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57114 #64 (4 connections now open)
+2016-05-10T23:31:29.622-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57115 #65 (5 connections now open)
+2016-05-10T23:44:35.367-0300 I NETWORK  [conn65] end connection 127.0.0.1:57115 (4 connections now open)
+2016-05-10T23:44:35.367-0300 I NETWORK  [conn64] end connection 127.0.0.1:57114 (4 connections now open)
+2016-05-10T23:44:35.367-0300 I NETWORK  [conn62] end connection 127.0.0.1:57112 (4 connections now open)
+2016-05-10T23:44:35.367-0300 I NETWORK  [conn63] end connection 127.0.0.1:57113 (4 connections now open)
+2016-05-10T23:44:35.368-0300 I NETWORK  [conn61] end connection 127.0.0.1:57111 (4 connections now open)
+2016-05-10T23:44:37.997-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57227 #66 (1 connection now open)
+2016-05-10T23:44:37.997-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57228 #67 (2 connections now open)
+2016-05-10T23:44:38.008-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57229 #68 (3 connections now open)
+2016-05-10T23:44:38.098-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57230 #69 (4 connections now open)
+2016-05-10T23:44:38.109-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57231 #70 (5 connections now open)
+2016-05-10T23:51:39.450-0300 I NETWORK  [conn70] end connection 127.0.0.1:57231 (4 connections now open)
+2016-05-10T23:51:39.450-0300 I NETWORK  [conn69] end connection 127.0.0.1:57230 (4 connections now open)
+2016-05-10T23:51:39.451-0300 I NETWORK  [conn67] end connection 127.0.0.1:57228 (4 connections now open)
+2016-05-10T23:51:39.451-0300 I NETWORK  [conn66] end connection 127.0.0.1:57227 (4 connections now open)
+2016-05-10T23:51:39.451-0300 I NETWORK  [conn68] end connection 127.0.0.1:57229 (4 connections now open)
+2016-05-10T23:51:42.130-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57320 #71 (1 connection now open)
+2016-05-10T23:51:42.130-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57321 #72 (2 connections now open)
+2016-05-10T23:51:42.131-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57322 #73 (3 connections now open)
+2016-05-10T23:51:42.131-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57323 #74 (4 connections now open)
+2016-05-10T23:51:42.132-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57324 #75 (5 connections now open)
+2016-05-10T23:57:35.411-0300 I NETWORK  [conn75] end connection 127.0.0.1:57324 (4 connections now open)
+2016-05-10T23:57:35.411-0300 I NETWORK  [conn74] end connection 127.0.0.1:57323 (4 connections now open)
+2016-05-10T23:57:35.411-0300 I NETWORK  [conn73] end connection 127.0.0.1:57322 (4 connections now open)
+2016-05-10T23:57:35.412-0300 I NETWORK  [conn72] end connection 127.0.0.1:57321 (4 connections now open)
+2016-05-10T23:57:35.412-0300 I NETWORK  [conn71] end connection 127.0.0.1:57320 (4 connections now open)
+2016-05-11T03:25:36.929-0300 I STORAGE  [DataFileSync] flushing mmaps took 3175955ms  for 8 files
+2016-05-15T10:55:50.271-0300 I COMMAND  [PeriodicTaskRunner] task: DBConnectionPool-cleaner took: 202ms
+2016-05-15T12:00:56.709-0300 I COMMAND  [PeriodicTaskRunner] task: DBConnectionPool-cleaner took: 149ms
+2016-05-15T12:02:12.636-0300 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 136ms
+2016-05-16T05:35:46.185-0300 I COMMAND  [PeriodicTaskRunner] task: DBConnectionPool-cleaner took: 260ms
+2016-05-16T07:36:38.272-0300 I COMMAND  [PeriodicTaskRunner] task: DBConnectionPool-cleaner took: 149ms
+2016-05-16T15:36:27.246-0300 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 112ms
+2016-05-20T02:36:54.062-0300 I STORAGE  [DataFileSync] flushing mmaps took 7161174ms  for 8 files
+2016-05-20T08:58:24.682-0300 I COMMAND  [PeriodicTaskRunner] task: DBConnectionPool-cleaner took: 194ms

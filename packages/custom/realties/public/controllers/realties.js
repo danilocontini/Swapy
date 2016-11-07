@@ -2,51 +2,117 @@
 
 /* jshint -W098 */
 angular.module('mean.realties').controller('RealtiesController', ['$scope',
-  function($scope) {
-      $scope.contactType = [
-	      'teste 1',
-	      'teste 2',
-	      'teste 3',
-	      'teste 4',
-	      'teste 5'
-      ];
-	  $scope.create = function (isValid) {
-		  if (isValid) {
-			  var owner = new Articles($scope.article);
-			  article.$save(function (response) {
-				  return true;
-			  });
+  function ($scope, $timeout, $q, $log) {
 
-			  $scope.owner = {};
+        var self = this;
 
-		  } else {
-			  $scope.submitted = true;
-		  }
-	  }
-	};
-])
-.config(function($mdThemingProvider) {
-  $mdThemingProvider.definePalette('amazingPaletteName', {
-    '50': 'ffebee',
-    '100': 'ffcdd2',
-    '200': 'ef9a9a',
-    '300': 'e57373',
-    '400': 'ef5350',
-    '500': 'f44336',
-    '600': 'e53935',
-    '700': 'd32f2f',
-    '800': 'c62828',
-    '900': 'b71c1c',
-    'A100': 'ff8a80',
-    'A200': 'ff5252',
-    'A400': 'ff1744',
-    'A700': 'd50000',
-    'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
-                                        // on this palette should be dark or light
-    'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
-     '200', '300', '400', 'A100'],
-    'contrastLightColors': undefined    // could also specify this if default was 'dark'
-  });
-  $mdThemingProvider.theme('default')
-    .primaryPalette('amazingPaletteName')
-});
+        self.simulateQuery = false;
+
+        // list of `state` value/display objects
+        self.states = loadAll();
+        self.querySearch = querySearch;
+
+        self.newState = newState;
+
+        function newState(state) {
+            alert("Sorry! You'll need to create a Constituion for " + state + " first!");
+        }
+
+        // ******************************
+        // Internal methods
+        // ******************************
+
+        /**
+         * Search for states... use $timeout to simulate
+         * remote dataservice call.
+         */
+        function querySearch(query) {
+            var results = query ? self.states.filter(createFilterFor(query)) : self.states,
+                deferred;
+            if (self.simulateQuery) {
+                deferred = $q.defer();
+                $timeout(function () {
+                    deferred.resolve(results);
+                }, Math.random() * 1000, false);
+                return deferred.promise;
+            } else {
+                return results;
+            }
+        }
+
+        /**
+         * Build `states` list of key/value pairs
+         */
+        function loadAll() {
+            var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
+                            Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
+                            Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
+                            Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
+                            North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
+                            South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
+                            Wisconsin, Wyoming';
+
+            return allStates.split(/, +/g).map(function (state) {
+                return {
+                    value: state.toLowerCase(),
+                    display: state
+                };
+            });
+        }
+
+        /**
+         * Create filter function for a query string
+         */
+        function createFilterFor(query) {
+            var lowercaseQuery = angular.lowercase(query);
+
+            return function filterFn(state) {
+                return (state.value.indexOf(lowercaseQuery) === 0);
+            };
+
+        }
+
+
+
+
+
+
+
+
+        var owner = this;
+        $scope.contactTypes = ['Email', 'Telefone', 'Celular', 'Comercial'];
+        $scope.owner = {
+            "fullname": "",
+            "cpf": "",
+            "contacts": [{
+                "type": "",
+                "value": ""
+            }]
+        };
+
+        $scope.addContact = function () {
+            var index = $scope.owner.contacts.length;
+            console.log("add item " + index);
+            $scope.owner.contacts.push({
+                "type": "",
+                "value": ""
+            });
+            index++;
+        };
+        $scope.removeContact = function (index) {
+            console.log("remove item " + index);
+            $scope.owner.contacts.splice(index, 1);
+        }
+
+
+        owner.create = function () {
+            var owner = new Realties($scope.owner);
+            owner.$save(function (response) {
+                return true;
+            });
+            $scope.owner = {};
+            console.log(owner);
+        };
+      $scope.propertyTypes = ['Casa', 'Casa Comercial', 'Sala', 'Terreno', 'Chácara', 'Galpão', 'Apartamento', 'Área', 'Prédio'];
+	}
+]);

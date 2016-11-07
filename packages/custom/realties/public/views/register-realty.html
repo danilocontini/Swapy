@@ -2,57 +2,147 @@
      layout-fill
      layout="column"
      class="md-form">
-    <md-tabs md-dynamic-height md-border-bottom md-autoselect>
-        <md-tab label="Proprietário">
-            <md-content layout-margin class="md-whiteframe-z1">
-                <form name="owner" ng-submit="registerOwner()" novalidate>
-                    <div layout="column">
-                        <md-input-container class="md-block"  flex-gt-md>
-                            <label>Nome</label>
-                            <input ng-model="owner.firstName">
-                        </md-input-container>
-                        <md-input-container class="md-block" flex-gt-md>
-                            <label>CPF</label>
-                            <input ng-model="owner.cpf"
-                                   ng-pattern="/^[0-9]{11}$/"
-                                   md-maxlength="11"
-                                   ui-mask="999.999.999-99"
-                                   required >
-                        </md-input-container>
-                        <md-input-container class="md-inline-block" flex-sm>
-                            <label></label>
-                            <md-select ng-model="rlt.contactType">
-                                <md-option ng-repeat="i in contactType" value="{{i}}">
-                                    {{i}}
-                                </md-option>
-                            </md-select>
-                        </md-input-container>
-                        <md-input-container class="md-inline-block" flex-sm>
-                            <label>Contato</label>
-                            <input ng-model="owner.inputContactType">
-                        </md-input-container>
-                    </div>
-                    <div layout-gt-sm="row">
-                        <p>{{rlt.contactType}}</p>
-                        <span flex></span>
-                        <md-button >
-                            <span>Adicionar Contato</span>
-                        </md-button>
-                    </div>
-                </form>
-            </md-content>
+    <md-tabs ng-init="tab.selectedIndex=0" md-selected="tab.selectedIndex" md-dynamic-height md-border-bottom>
+             <!--md-autoselect-->
+        <md-tab id="tab1">
+            <md-tab-label>Proprietário</md-tab-label>
+            <md-tab-body>
+                <md-content layout-margin class="md-whiteframe-z1">
+                    <form novalidate>
+                        <ng-form name="owneForm">
+                            <div layout="column">
+                                <md-input-container class="md-block" flex-gt-md>
+                                    <label>Nome</label>
+                                    <input ng-model="owner.fullname" required>
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-gt-md>
+                                    <label>CPF</label>
+                                    <input ng-model="owner.cpf" required>
+                                </md-input-container>
+                                <md-container ng-repeat="contact in owner.contacts track by $index" layout="row">
+                                    <md-input-container>
+                                        <label>Tipo</label>
+                                        <md-select ng-model="contact.type" required>
+                                            <md-option ng-repeat="type in contactTypes" value="{{type}}">
+                                                {{type}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                    <md-input-container flex>
+                                        <label>Contato</label>
+                                        <input ng-model="contact.value" required>
+                                    </md-input-container>
+                                    <md-button ng-hide="$first && $index<=0" class="md-fab md-mini md-primary" aria-label="Remover Contato" ng-click="removeContact($index)">
+                                        <md-icon class="material-icon">remove</md-icon>
+                                    </md-button>
+                                </md-container>
+                                <md-container layout="row">
+                                    <span flex></span>
+                                    <md-button class="md-fab md-mini md-primary" aria-label="Adicionar Contato" ng-click="addContact()">
+                                        <md-icon class="material-icons">add</md-icon>
+                                    </md-button>
+                                </md-container>
+                            </div>
+                        </ng-form>
+                    </form>
+                </md-content>
         </md-tab>
-        <md-tab label="Imóvel">
-            <md-content layout-margin class="md-whiteframe-z1">
-                <form name="realty">
-                </form>
-            </md-content>
+        <md-tab id="tab2">
+            <md-tab-label>Imóvel</md-tab-label>
+            <md-tab-body>
+                <md-content layout-margin class="md-whiteframe-z1">
+                    <form>
+                        <ng-form>
+                            <p>Proprietário:</p>
+                            <md-input-container class="md-block" flex-gt-md>
+                                <md-autocomplete md-min-length="0"
+                                                 placeholder="CPF">
+                                    <md-item-template>
+                                        <span md-highlight-text="rlt.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                                    </md-item-template>
+                                    <md-not-found>
+                                        No states matching "{{rlt.searchText}}" were found.
+                                        <a ng-click="tab.selectedIndex=0">Create a new one!</a>
+                                    </md-not-found>
+                                </md-autocomplete>
+                            </md-input-container>
+                            <md-content>
+                                <p>Tipo:</p>
+                                <md-checkbox ng-repeat="type in propertyTypes track by $index" ng-model="property.type" aria-label="{{type}}">
+                                    {{type}}
+                                </md-checkbox>
+                            </md-content>
+                        </ng-form>
+                        <ul>
+                            <li>Proprietário (Autocomplete)
+                                <ul>
+                                    <li>CPF (Número)</li>
+                                </ul>
+                            </li>
+                            <li>Tipo (Lista)
+                                <ul>
+                                    <li>Casa</li>
+                                    <li>Casa Comercial</li>
+                                    <li>Sala</li>
+                                    <li>Terreno</li>
+                                    <li>Chácara </li>
+                                    <li>Galpão </li>
+                                    <li>Apartamento</li>
+                                    <li>Área </li>
+                                    <li>Prédio</li>
+                                </ul>
+                            </li>
+                        Finalidade (Lista)
+                            <li>Residencial</li>
+                            <li>Comercial</li>
+                            <li>Industrial</li>
+                            <li>Rural</li>
+                        Localização
+                            <li>Cidade (Autocomplete)</li>
+                            <li>CEP (Número)</li>
+                        Valor (Número)
+                            <li>Extra</li>
+                        Área (Número)
+                            <li>M2</li>
+                        </ul>
+                    </form>
+                </md-content>
+            </md-tab-body>
         </md-tab>
-        <md-tab label="Interesse">
-            <md-content layout-margin class="md-whiteframe-z1">
-                <form name="interested">
-                </form>
-            </md-content>
+        <md-tab id="tab3">
+            <md-tab-label>Interesse</md-tab-label>
+            <md-tab-body>
+                <md-content layout-margin class="md-whiteframe-z1">
+                    <form name="interested">
+                        Tipo (Lista)
+                        - Casa
+                        - Casa Comercial
+                        - Sala
+                        - Terreno
+                        - Chácara 
+                        - Galpão 
+                        - Apartamento
+                        - Área 
+                        - Prédio
+                        Finalidade (Lista)
+                        - Residencial
+                        - Comercial
+                        - Industrial
+                        - Rural
+                        Localização
+                        - Cidade (AutoComplete)
+                        - CEP (Número)
+                        Valor (Número)
+                        - Mínimo 
+                        - Máximo 
+                        - Extra
+                        Área (Número)
+                        - Mínimo
+                        - Máximo 
+
+                    </form>
+                </md-content>
+            </md-tab-body>
         </md-tab>
     </md-tabs>
 </div>

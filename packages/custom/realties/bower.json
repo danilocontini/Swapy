@@ -3,19 +3,17 @@
     "version": "0.0.1",
     "description": "",
     "author": {
-        "name": "danilocontini";
+        "name": "danilocontini"
     },
     "dependencies":
     {
-        /*
         "bootstrap": "latest",
         "d3": "latest",
-        "angular-ui-mask": "latest";
-        */
+        "angular-ui-mask": "latest"
     },
     "licence": "MIT",
     "scripts":
     {
-        //"postinstall": "bower install";
+        "postinstall": "bower install"
     }
 }
