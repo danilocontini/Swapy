@@ -1,6 +1,10 @@
 {
     "dependencies": {},
     "anonymizedData": true,
+<<<<<<< HEAD
     "name": "Swapy",
     "id": "564e672d47d5e63659352add"
+=======
+    "name": "mean"
+>>>>>>> linnovate/master
 }
